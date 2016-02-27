@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE aspectran PUBLIC "-//ASPECTRAN//DTD Aspectran Configuration 2.0//EN"
+		"http://aspectran.github.io/dtd/aspectran-2.0.dtd">
+
+<aspectran>
+	
+	<description>
+		Bean과 Translet을 본 XML 문서에서 정의하지 않고,
+		Java 코드 상의 Annotation을 이용하여 정의합니다.
+		AOP나 특수한 목적의 Bean에 대해서만 XML 설정 문서에 기록합니다.
+	</description>
+
+	<!-- 기본 설정 -->
+	<settings>
+		<setting name="transletNamePattern" value="/ga-annotated-config/*"/>
+	</settings>
+
+	<bean scan="hello.*"/>
+
+	<aspect id="defaultRequestRule">
+		<joinpoint scope="request"/>
+		<settings>
+			<setting name="characterEncoding" value="utf-8"/>
+		</settings>
+	</aspect>
+
+	<aspect id="defaultResponseRule">
+		<joinpoint scope="response">
+			<pointcut>
+				target: {
+					+: "/ga-annotated-config/**/*"
+					-: "/ga-annotated-config/jsp/**/*"
+				}
+			</pointcut>
+		</joinpoint>
+		<settings>
+			<setting name="characterEncoding" value="utf-8"/>
+			<setting name="contentEncoding" value="gzip"/>
+		</settings>
+	</aspect>
+
+	<aspect id="simplestAspect">
+		<description>
+			요청 URI가 "/ga-annotated-config/"로 시작하고,
+			simplestAction Bean의 helloWorld 메쏘드를 실행하는 Translet이 발견되면,
+			해당 Translet의 실행 전에는 simplestAdvice Bean의 wellcome 메쏘드를 실행하고,
+			해당 Translet의 실행 후에는 simplestAdvice Bean의 goodbye 메쏘드를 실행합니다.
+		</description>
+		<joinpoint scope="translet">
+			<pointcut>
+				target: {
+					+: "/ga-annotated-config/*@class:hello.SimplestAction^helloWorld"
+				}
+			</pointcut>
+		</joinpoint>
+		<advice bean="class:hello.SimplestAdvice">
+			<before>
+				<action method="wellcome"/>
+			</before>
+			<after>
+				<action method="goodbye"/>
+			</after>
+		</advice>
+	</aspect>
+
+</aspectran>
