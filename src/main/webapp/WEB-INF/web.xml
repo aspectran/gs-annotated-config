@@ -24,6 +24,9 @@
 					startup: true
 				}
 			}
+			web: {
+				urlDecoding: "utf-8"
+			}
 		</param-value>
 	</context-param>
 	<listener>

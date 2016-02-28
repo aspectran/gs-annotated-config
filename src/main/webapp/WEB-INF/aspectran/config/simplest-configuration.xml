@@ -7,7 +7,7 @@
 	<description>
 		Bean과 Translet을 본 XML 문서에서 정의하지 않고,
 		Java 코드 상의 Annotation을 이용하여 정의합니다.
-		AOP나 특수한 목적의 Bean에 대해서만 XML 설정 문서에 기록합니다.
+		AOP 활용 및 특수한 목적의 Bean에 대해서만 XML 설정 문서에 기록합니다.
 	</description>
 
 	<!-- 기본 설정 -->
