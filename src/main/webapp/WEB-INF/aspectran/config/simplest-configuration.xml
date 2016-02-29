@@ -49,7 +49,7 @@
 		<joinpoint scope="translet">
 			<pointcut>
 				target: {
-					+: "/ga-annotated-config/*@class:hello.SimplestAction^helloWorld"
+					+: "/ga-annotated-config/echo/helloWorld*@class:hello.SimplestAction"
 				}
 			</pointcut>
 		</joinpoint>
