@@ -17,6 +17,13 @@
 
 	<bean scan="hello.*"/>
 
+	<bean id="jspViewDispatcher" class="com.aspectran.web.activity.response.view.JspViewDispatcher">
+		<property>
+			<item name="templateNamePrefix" value="/WEB-INF/jsp/"/>
+			<item name="templateNameSuffix" value=".jsp"/>
+		</property>
+	</bean>
+
 	<aspect id="defaultRequestRule">
 		<joinpoint scope="request"/>
 		<settings>
@@ -25,17 +32,10 @@
 	</aspect>
 
 	<aspect id="defaultResponseRule">
-		<joinpoint scope="response">
-			<pointcut>
-				target: {
-					+: "/ga-annotated-config/**/*"
-					-: "/ga-annotated-config/jsp/**/*"
-				}
-			</pointcut>
-		</joinpoint>
+		<joinpoint scope="response"/>
 		<settings>
 			<setting name="characterEncoding" value="utf-8"/>
-			<setting name="contentEncoding" value="gzip"/>
+			<setting name="viewDispatcher" value="jspViewDispatcher"/>
 		</settings>
 	</aspect>
 
@@ -49,7 +49,7 @@
 		<joinpoint scope="translet">
 			<pointcut>
 				target: {
-					+: "/ga-annotated-config/echo/helloWorld*@class:hello.SimplestAction"
+					+: "/ga-annotated-config/**/helloWorld*@class:hello.SimplestAction"
 				}
 			</pointcut>
 		</joinpoint>

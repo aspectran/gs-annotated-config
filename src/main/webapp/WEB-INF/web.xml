@@ -21,7 +21,7 @@
 				autoReloading: {
 					reloadMethod: hard
 					observationInterval: 5
-					startup: true
+					startup: false
 				}
 			}
 			web: {
@@ -39,6 +39,6 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>aspectranService</servlet-name>
-		<url-pattern>/*</url-pattern>
+		<url-pattern>/ga-annotated-config/*</url-pattern>
 	</servlet-mapping>
 </web-app>
