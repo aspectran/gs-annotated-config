@@ -19,8 +19,8 @@
 
 	<bean id="jspViewDispatcher" class="com.aspectran.web.activity.response.view.JspViewDispatcher">
 		<property>
-			<item name="templateNamePrefix" value="/WEB-INF/jsp/"/>
-			<item name="templateNameSuffix" value=".jsp"/>
+			<item name="prefix" value="/WEB-INF/jsp/"/>
+			<item name="suffix" value=".jsp"/>
 		</property>
 	</bean>
 
