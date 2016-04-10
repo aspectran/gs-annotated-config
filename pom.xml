@@ -33,6 +33,9 @@
 					<excludeDefaultDirectories>true</excludeDefaultDirectories>
 					<filesets>
 						<fileset>
+							<directory>target/</directory>
+						</fileset>
+						<fileset>
 							<directory>src/main/webapp/WEB-INF/lib</directory>
 							<includes>
 								<include>*.jar</include>
