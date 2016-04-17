@@ -12,8 +12,8 @@ public class SimplestAdvice {
 	@Autowired
 	private SimplestService simplestService;
 
-	public String wellcome(Translet translet) {
-		String msg = simplestService.getWellcomeMessage(translet);
+	public String welcome(Translet translet) {
+		String msg = simplestService.getWelcomeMessage(translet);
 
 		log.info(msg);
 		

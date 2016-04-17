@@ -6,7 +6,7 @@ import com.aspectran.core.activity.Translet;
 
 public class SimplestService {
 
-    public String getWellcomeMessage(Translet translet) {
+    public String getWelcomeMessage(Translet translet) {
         HttpServletRequest req = translet.getRequestAdaptee();
         String ip = req.getRemoteAddr();
         return "Welcome to Aspectran! (" + ip + ")";

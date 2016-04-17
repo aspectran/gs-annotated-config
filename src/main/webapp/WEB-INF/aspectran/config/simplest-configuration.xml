@@ -55,7 +55,7 @@
 		</joinpoint>
 		<advice bean="class:hello.SimplestAdvice">
 			<before>
-				<action method="wellcome"/>
+				<action method="welcome"/>
 			</before>
 			<after>
 				<action method="goodbye"/>
