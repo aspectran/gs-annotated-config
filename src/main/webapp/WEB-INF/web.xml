@@ -17,8 +17,8 @@
 				resources: [
 					"/WEB-INF/aspectran/config"
 				]
-				hybridLoading: false
-				autoReloading: {
+				hybridLoad: false
+				autoReload: {
 					reloadMethod: hard
 					observationInterval: 5
 					startup: false
