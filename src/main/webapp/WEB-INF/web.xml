@@ -23,6 +23,8 @@
 					observationInterval: 5
 					startup: false
 				}
+				activeProfiles: [
+				]
 			}
 			web: {
 				uriDecoding: "utf-8"
