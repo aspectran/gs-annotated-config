@@ -29,7 +29,7 @@ public class SimplestAction {
 		return msg;
 	}
 
-	@Request(translet = "${templateName}.jsp", method = MethodType.ALL)
+	@Request(translet = "/front/${templateName}", method = MethodType.ALL)
 	@Dispatch(name = "${templateName}")
 	@Action(id = "title")
 	public String restHelloWorld() {
@@ -38,7 +38,7 @@ public class SimplestAction {
 
 	@Request(translet = "echo/${echoMsg}", method = MethodType.ALL)
 	@Transform(transformType = TransformType.JSON, pretty = true)
-	@Action(id = "result")
+	@Action(id = "message")
 	public String restEchoMessage(Translet translet) {
 		String echoMsg = translet.getParameter("echoMsg");
 
@@ -49,7 +49,7 @@ public class SimplestAction {
 
 	@Request(translet = "echo")
 	@Transform(transformType = TransformType.JSON, pretty = true)
-	@Action(id = "params")
+	@Action(id = "message")
 	public Map<String, Object> echoParams(Translet translet) {
 		Map<String, Object> params = translet.getParameterMap();
 

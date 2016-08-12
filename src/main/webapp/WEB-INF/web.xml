@@ -12,7 +12,7 @@
 		<param-name>aspectran:config</param-name>
 		<param-value>
 			context: {
-				root: "/WEB-INF/aspectran/config/simplest-configuration.xml"
+				root: "/WEB-INF/aspectran/config/root-configuration.xml"
 				encoding: "utf-8"
 				resources: [
 					"/WEB-INF/aspectran/config"
@@ -23,8 +23,6 @@
 					observationInterval: 5
 					startup: false
 				}
-				activeProfiles: [
-				]
 			}
 			web: {
 				uriDecoding: "utf-8"
@@ -35,12 +33,12 @@
 		<listener-class>com.aspectran.web.startup.listener.AspectranServiceListener</listener-class>
 	</listener>
 	<servlet>
-		<servlet-name>aspectran-activity</servlet-name>
+		<servlet-name>web-activity-servlet</servlet-name>
 		<servlet-class>com.aspectran.web.startup.servlet.WebActivityServlet</servlet-class>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>aspectran-activity</servlet-name>
-		<url-pattern>/ga-annotated-config/*</url-pattern>
+		<servlet-name>web-activity-servlet</servlet-name>
+		<url-pattern>/</url-pattern>
 	</servlet-mapping>
 </web-app>

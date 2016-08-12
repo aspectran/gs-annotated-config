@@ -33,7 +33,7 @@
 
 	<aspect id="defaultResponseRule">
 		<joinpoint scope="response"/>
-		<settings>
+		<settings>´
 			<setting name="characterEncoding" value="utf-8"/>
 			<setting name="viewDispatcher" value="jspViewDispatcher"/>
 		</settings>
