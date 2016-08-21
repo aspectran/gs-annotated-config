@@ -1,4 +1,4 @@
-package hello;
+package sample;
 
 import com.aspectran.core.activity.Translet;
 import com.aspectran.core.context.bean.annotation.Autowired;

@@ -1,4 +1,4 @@
-package hello;
+package sample;
 
 import javax.servlet.http.HttpServletRequest;
 

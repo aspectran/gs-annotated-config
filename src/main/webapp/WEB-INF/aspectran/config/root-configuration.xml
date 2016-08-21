@@ -15,7 +15,7 @@
 		<setting name="transletNamePattern" value="/ga-annotated-config/*"/>
 	</settings>
 
-	<bean scan="hello.*"/>
+	<bean scan="sample.*"/>
 
 	<bean id="jspViewDispatcher" class="com.aspectran.web.activity.response.view.JspViewDispatcher">
 		<properties>
@@ -48,12 +48,12 @@
 		</description>
 		<joinpoint scope="translet">
 			<pointcut>
-				target: {
-					+: "/ga-annotated-config/**/helloWorld*@class:hello.SimplestAction"
-				}
-			</pointcut>
+                target: {
+                +: "/ga-annotated-config/**/helloWorld*@class:sample.SimplestAction"
+                }
+            </pointcut>
 		</joinpoint>
-		<advice bean="class:hello.SimplestAdvice">
+		<advice bean="class:sample.SimplestAdvice">
 			<before>
 				<action method="welcome"/>
 			</before>
