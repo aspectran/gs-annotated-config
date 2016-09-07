@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE aspectran PUBLIC "-//ASPECTRAN//DTD Aspectran Configuration 2.0//EN"
-		"http://aspectran.github.io/dtd/aspectran-2.dtd">
+<!DOCTYPE aspectran PUBLIC "-//ASPECTRAN//DTD Aspectran Configuration 3.0//EN"
+		"http://aspectran.github.io/dtd/aspectran-3.dtd">
 
 <aspectran>
 	
@@ -17,23 +17,16 @@
 
 	<bean scan="sample.*"/>
 
-	<bean id="jspViewDispatcher" class="com.aspectran.web.activity.response.view.JspViewDispatcher">
+	<bean id="jspViewDispatcher" class="com.aspectran.web.support.view.JspViewDispatcher">
 		<properties>
 			<item name="prefix" value="/WEB-INF/jsp/"/>
 			<item name="suffix" value=".jsp"/>
 		</properties>
 	</bean>
 
-	<aspect id="defaultRequestRule">
-		<joinpoint scope="request"/>
+	<aspect id="transletSettings">
+		<joinpoint type="translet"/>
 		<settings>
-			<setting name="characterEncoding" value="utf-8"/>
-		</settings>
-	</aspect>
-
-	<aspect id="defaultResponseRule">
-		<joinpoint scope="response"/>
-		<settings>´
 			<setting name="characterEncoding" value="utf-8"/>
 			<setting name="viewDispatcher" value="jspViewDispatcher"/>
 		</settings>
@@ -46,12 +39,10 @@
 			해당 Translet의 실행 전에는 simplestAdvice Bean의 welcome 메쏘드를 실행하고,
 			해당 Translet의 실행 후에는 simplestAdvice Bean의 goodbye 메쏘드를 실행합니다.
 		</description>
-		<joinpoint scope="translet">
-			<pointcut>
-                target: {
-                +: "/ga-annotated-config/**/helloWorld*@class:sample.SimplestAction"
-                }
-            </pointcut>
+		<joinpoint type="translet">
+			pointcut: {
+                +: /ga-annotated-config/**/helloWorld*@class:sample.SimplestAction
+            }
 		</joinpoint>
 		<advice bean="class:sample.SimplestAdvice">
 			<before>

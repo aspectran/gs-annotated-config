@@ -68,7 +68,7 @@
 		<dependency>
 			<groupId>com.aspectran</groupId>
 			<artifactId>aspectran</artifactId>
-			<version>2.4.1</version>
+			<version>3.0.0-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>org.javassist</groupId>
