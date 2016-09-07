@@ -12,10 +12,10 @@
 		<param-name>aspectran:config</param-name>
 		<param-value>
 			context: {
-				root: "/WEB-INF/aspectran/config/root-configuration.xml"
-				encoding: "utf-8"
+				root: /WEB-INF/aspectran/config/root-configuration.xml
+				encoding: utf-8
 				resources: [
-					"/WEB-INF/aspectran/config"
+					/WEB-INF/aspectran/config
 				]
 				hybridLoad: false
 				autoReload: {
@@ -25,7 +25,7 @@
 				}
 			}
 			web: {
-				uriDecoding: "utf-8"
+				uriDecoding: utf-8
 			}
 		</param-value>
 	</context-param>
