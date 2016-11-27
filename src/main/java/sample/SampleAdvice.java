@@ -10,7 +10,7 @@ public class SimplestAdvice {
 	private final Log log = LogFactory.getLog(SimplestAdvice.class);
 
 	@Autowired
-	private SimplestService simplestService;
+	private SampleService simplestService;
 
 	public String welcome(Translet translet) {
 		String msg = simplestService.getWelcomeMessage(translet);
