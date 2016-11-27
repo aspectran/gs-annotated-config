@@ -32,19 +32,19 @@
 		</settings>
 	</aspect>
 
-	<aspect id="simplestAspect">
+	<aspect id="sampleAspect">
 		<description>
 			요청 URI가 "/ga-annotated-config/"로 시작하고,
 			simplestAction Bean의 helloWorld 메쏘드를 실행하는 Translet이 발견되면,
-			해당 Translet의 실행 전에는 simplestAdvice Bean의 welcome 메쏘드를 실행하고,
-			해당 Translet의 실행 후에는 simplestAdvice Bean의 goodbye 메쏘드를 실행합니다.
+			해당 Translet의 실행 전에는 sampleAdvice Bean의 welcome 메쏘드를 실행하고,
+			해당 Translet의 실행 후에는 sampleAdvice Bean의 goodbye 메쏘드를 실행합니다.
 		</description>
 		<joinpoint type="translet">
 			pointcut: {
-                +: /ga-annotated-config/**/helloWorld*@class:sample.SimplestAction
-            }
+			+: /ga-annotated-config/**/helloWorld*@class:sample.SampleAction
+			}
 		</joinpoint>
-		<advice bean="class:sample.SimplestAdvice">
+		<advice bean="class:sample.SampleAdvice">
 			<before>
 				<action method="welcome"/>
 			</before>

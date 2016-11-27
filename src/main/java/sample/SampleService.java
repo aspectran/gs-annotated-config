@@ -4,7 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import com.aspectran.core.activity.Translet;
 
-public class SimplestService {
+public class SampleService {
 
     public String getWelcomeMessage(Translet translet) {
         HttpServletRequest req = translet.getRequestAdaptee();

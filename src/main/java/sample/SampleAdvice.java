@@ -5,9 +5,9 @@ import com.aspectran.core.context.bean.annotation.Autowired;
 import com.aspectran.core.util.logging.Log;
 import com.aspectran.core.util.logging.LogFactory;
 
-public class SimplestAdvice {
+public class SampleAdvice {
 	
-	private final Log log = LogFactory.getLog(SimplestAdvice.class);
+	private final Log log = LogFactory.getLog(SampleAdvice.class);
 
 	@Autowired
 	private SampleService simplestService;
