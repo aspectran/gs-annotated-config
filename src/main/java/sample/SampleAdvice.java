@@ -6,28 +6,28 @@ import com.aspectran.core.util.logging.Log;
 import com.aspectran.core.util.logging.LogFactory;
 
 public class SampleAdvice {
-	
-	private final Log log = LogFactory.getLog(SampleAdvice.class);
 
-	@Autowired
-	private SampleService simplestService;
+    private final Log log = LogFactory.getLog(SampleAdvice.class);
 
-	public String welcome(Translet translet) {
-		String msg = simplestService.getWelcomeMessage(translet);
+    @Autowired
+    private SampleService simplestService;
 
-		log.info(msg);
-		
-		return msg;
-	}
-	
-	public String goodbye(Translet translet) {
-		log.info("activityDataMap " + translet.getActivityDataMap(true));
+    public String welcome(Translet translet) {
+        String msg = simplestService.getWelcomeMessage(translet);
 
-		String msg = simplestService.getGoodbyeMessage();
-		
-		log.info(msg);
-		
-		return msg;
-	}
-	
+        log.info(msg);
+
+        return msg;
+    }
+
+    public String goodbye(Translet translet) {
+        log.info("activityDataMap " + translet.getActivityDataMap(true));
+
+        String msg = simplestService.getGoodbyeMessage();
+
+        log.info(msg);
+
+        return msg;
+    }
+
 }
