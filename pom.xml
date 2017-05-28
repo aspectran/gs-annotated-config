@@ -2,10 +2,10 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.aspectran</groupId>
-    <artifactId>ga-annotated-config</artifactId>
+    <artifactId>gs-annotated-config</artifactId>
     <packaging>war</packaging>
     <version>0.1.0</version>
-    <url>https://github.com/aspectran-guides/ga-annotated-config.git</url>
+    <url>https://github.com/aspectran/gs-annotated-config.git</url>
     <contributors>
         <contributor>
             <name>Juho Jeong</name>
