@@ -3,11 +3,11 @@ package sample;
 import java.util.Map;
 
 import com.aspectran.core.activity.Translet;
-import com.aspectran.core.context.bean.annotation.Action;
-import com.aspectran.core.context.bean.annotation.Configuration;
-import com.aspectran.core.context.bean.annotation.Dispatch;
-import com.aspectran.core.context.bean.annotation.Request;
-import com.aspectran.core.context.bean.annotation.Transform;
+import com.aspectran.core.component.bean.annotation.Action;
+import com.aspectran.core.component.bean.annotation.Configuration;
+import com.aspectran.core.component.bean.annotation.Dispatch;
+import com.aspectran.core.component.bean.annotation.Request;
+import com.aspectran.core.component.bean.annotation.Transform;
 import com.aspectran.core.context.rule.type.MethodType;
 import com.aspectran.core.context.rule.type.TransformType;
 import com.aspectran.core.util.logging.Log;
@@ -63,7 +63,7 @@ public class SampleAction {
     @Transform(transformType = TransformType.JSON, pretty = true)
     @Action(id = "params")
     public Map<String, Object> echoParams(Translet translet) {
-        Map<String, Object> params = translet.getParameterMap();
+        Map<String, Object> params = translet.getAllParameters();
 
         log.info("params: " + params);
 

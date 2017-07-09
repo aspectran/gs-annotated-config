@@ -1,7 +1,7 @@
 package sample;
 
 import com.aspectran.core.activity.Translet;
-import com.aspectran.core.context.bean.annotation.Autowired;
+import com.aspectran.core.component.bean.annotation.Autowired;
 import com.aspectran.core.util.logging.Log;
 import com.aspectran.core.util.logging.LogFactory;
 
