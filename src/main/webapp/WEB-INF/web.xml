@@ -12,7 +12,7 @@
         <param-name>aspectran:config</param-name>
         <param-value>
             context: {
-                root: /WEB-INF/aspectran/config/root-configuration.xml
+                root: /WEB-INF/aspectran/config/root-config.xml
                 encoding: utf-8
                 resources: [
                     /WEB-INF/aspectran/config
