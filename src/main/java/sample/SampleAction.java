@@ -3,6 +3,7 @@ package sample;
 import com.aspectran.core.activity.Translet;
 import com.aspectran.core.component.bean.annotation.Action;
 import com.aspectran.core.component.bean.annotation.Configuration;
+import com.aspectran.core.component.bean.annotation.Description;
 import com.aspectran.core.component.bean.annotation.Dispatch;
 import com.aspectran.core.component.bean.annotation.Request;
 import com.aspectran.core.component.bean.annotation.Transform;
@@ -24,6 +25,7 @@ public class SampleAction {
     @Request(translet = "helloWorld")
     @Transform(type = TransformType.XML)
     @Action(id = "message")
+    @Description("Defines a translet for printing the sentence \"Hello, World.\"")
     public String helloWorld() {
         String msg = "Hello, World.";
 
