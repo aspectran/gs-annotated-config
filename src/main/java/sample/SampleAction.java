@@ -22,7 +22,7 @@ public class SampleAction {
      * http://localhost:8080/ga-annotated-config/helloWorld
      */
     @Request(translet = "helloWorld")
-    @Transform(transformType = TransformType.XML)
+    @Transform(type = TransformType.XML)
     @Action(id = "message")
     public String helloWorld() {
         String msg = "Hello, World.";
@@ -46,7 +46,7 @@ public class SampleAction {
      * http://localhost:8080/ga-annotated-config/echo/this-is-a-message
      */
     @Request(translet = "echo/${echoMsg}", method = MethodType.ALL)
-    @Transform(transformType = TransformType.JSON, pretty = true)
+    @Transform(type = TransformType.JSON, pretty = true)
     @Action(id = "message")
     public String restEchoMessage(Translet translet) {
         String echoMsg = translet.getParameter("echoMsg");
@@ -60,7 +60,7 @@ public class SampleAction {
      * http://localhost:8080/ga-annotated-config/echoParams?param1=1&param2=2
      */
     @Request(translet = "echoParams")
-    @Transform(transformType = TransformType.JSON, pretty = true)
+    @Transform(type = TransformType.JSON, pretty = true)
     @Action(id = "params")
     public Map<String, Object> echoParams(Translet translet) {
         Map<String, Object> params = translet.getAllParameters();
