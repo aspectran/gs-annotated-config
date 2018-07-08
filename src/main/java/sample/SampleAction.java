@@ -5,9 +5,8 @@ import com.aspectran.core.component.bean.annotation.Action;
 import com.aspectran.core.component.bean.annotation.Configuration;
 import com.aspectran.core.component.bean.annotation.Description;
 import com.aspectran.core.component.bean.annotation.Dispatch;
-import com.aspectran.core.component.bean.annotation.Request;
+import com.aspectran.core.component.bean.annotation.RequestAsGet;
 import com.aspectran.core.component.bean.annotation.Transform;
-import com.aspectran.core.context.rule.type.MethodType;
 import com.aspectran.core.context.rule.type.TransformType;
 import com.aspectran.core.util.logging.Log;
 import com.aspectran.core.util.logging.LogFactory;
@@ -22,7 +21,7 @@ public class SampleAction {
     /**
      * http://localhost:8080/ga-annotated-config/helloWorld
      */
-    @Request(translet = "helloWorld")
+    @RequestAsGet("helloWorld")
     @Transform(type = TransformType.XML)
     @Action(id = "message")
     @Description("Defines a translet for printing the sentence \"Hello, World.\"")
@@ -37,7 +36,7 @@ public class SampleAction {
     /**
      * http://localhost:8080/ga-annotated-config/front/helloWorld
      */
-    @Request(translet = "front/${templateName}", method = MethodType.ALL)
+    @RequestAsGet("front/${templateName}")
     @Dispatch(name = "${templateName}")
     @Action(id = "title")
     public String restHelloWorld() {
@@ -47,8 +46,8 @@ public class SampleAction {
     /**
      * http://localhost:8080/ga-annotated-config/echo/this-is-a-message
      */
-    @Request(translet = "echo/${echoMsg}", method = MethodType.ALL)
-    @Transform(type = TransformType.JSON, pretty = true)
+    @RequestAsGet("echo/${echoMsg}")
+    @Transform(type = TransformType.JSON)
     @Action(id = "message")
     public String restEchoMessage(Translet translet) {
         String echoMsg = translet.getParameter("echoMsg");
@@ -61,8 +60,8 @@ public class SampleAction {
     /**
      * http://localhost:8080/ga-annotated-config/echoParams?param1=1&param2=2
      */
-    @Request(translet = "echoParams")
-    @Transform(type = TransformType.JSON, pretty = true)
+    @RequestAsGet("echoParams")
+    @Transform(type = TransformType.JSON)
     @Action(id = "params")
     public Map<String, Object> echoParams(Translet translet) {
         Map<String, Object> params = translet.getAllParameters();
