@@ -19,7 +19,7 @@ public class SampleAction {
     private final Log log = LogFactory.getLog(SampleAction.class);
 
     /**
-     * http://localhost:8080/ga-annotated-config/helloWorld
+     * http://localhost:8080/gs-annotated-config/helloWorld
      */
     @RequestAsGet("helloWorld")
     @Transform(type = TransformType.XML)
@@ -34,7 +34,7 @@ public class SampleAction {
     }
 
     /**
-     * http://localhost:8080/ga-annotated-config/front/helloWorld
+     * http://localhost:8080/gs-annotated-config/front/helloWorld
      */
     @RequestAsGet("front/${templateName}")
     @Dispatch(name = "${templateName}")
@@ -44,7 +44,7 @@ public class SampleAction {
     }
 
     /**
-     * http://localhost:8080/ga-annotated-config/echo/this-is-a-message
+     * http://localhost:8080/gs-annotated-config/echo/this-is-a-message
      */
     @RequestAsGet("echo/${echoMsg}")
     @Transform(type = TransformType.JSON)
