@@ -69,7 +69,7 @@
         <dependency>
             <groupId>com.aspectran</groupId>
             <artifactId>aspectran-web</artifactId>
-            <version>5.2.0</version>
+            <version>5.2.1</version>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
