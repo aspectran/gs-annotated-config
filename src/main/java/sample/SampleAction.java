@@ -2,7 +2,7 @@ package sample;
 
 import com.aspectran.core.activity.Translet;
 import com.aspectran.core.component.bean.annotation.Action;
-import com.aspectran.core.component.bean.annotation.Configuration;
+import com.aspectran.core.component.bean.annotation.Component;
 import com.aspectran.core.component.bean.annotation.Description;
 import com.aspectran.core.component.bean.annotation.Dispatch;
 import com.aspectran.core.component.bean.annotation.RequestAsGet;
@@ -13,7 +13,7 @@ import com.aspectran.core.util.logging.LogFactory;
 
 import java.util.Map;
 
-@Configuration
+@Component
 public class SampleAction {
 
     private final Log log = LogFactory.getLog(SampleAction.class);
