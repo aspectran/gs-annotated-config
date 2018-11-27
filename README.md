@@ -27,7 +27,7 @@ public class SampleAction {
     /**
      * http://localhost:8080/gs-annotated-config/helloWorld
      */
-    @Request(translet = "helloWorld")
+    @Request("helloWorld")
     @Transform(transformType = TransformType.XML)
     @Action(id = "message")
     public String helloWorld() {
@@ -41,7 +41,7 @@ public class SampleAction {
     /**
      * http://localhost:8080/gs-annotated-config/front/helloWorld
      */
-    @Request(translet = "front/${templateName}", method = MethodType.ALL)
+    @Request("front/${templateName}", method = MethodType.ALL)
     @Dispatch(name = "${templateName}")
     @Action(id = "title")
     public String restHelloWorld() {
@@ -51,7 +51,7 @@ public class SampleAction {
     /**
      * http://localhost:8080/gs-annotated-config/echo/this-is-a-message
      */
-    @Request(translet = "echo/${echoMsg}", method = MethodType.ALL)
+    @Request("echo/${echoMsg}", method = MethodType.ALL)
     @Transform(transformType = TransformType.JSON, pretty = true)
     @Action(id = "message")
     public String restEchoMessage(Translet translet) {
@@ -65,7 +65,7 @@ public class SampleAction {
     /**
      * http://localhost:8080/gs-annotated-config/echoParams?param1=1&param2=2
      */
-    @Request(translet = "echoParams")
+    @Request("echoParams")
     @Transform(transformType = TransformType.JSON, pretty = true)
     @Action(id = "params")
     public Map<String, Object> echoParams(Translet translet) {
