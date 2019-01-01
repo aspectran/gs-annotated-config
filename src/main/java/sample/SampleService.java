@@ -1,9 +1,13 @@
 package sample;
 
+import com.aspectran.core.activity.Translet;
+import com.aspectran.core.component.bean.annotation.Bean;
+import com.aspectran.core.component.bean.annotation.Component;
+
 import javax.servlet.http.HttpServletRequest;
 
-import com.aspectran.core.activity.Translet;
-
+@Component
+@Bean("sampleService")
 public class SampleService {
 
     public String getWelcomeMessage(Translet translet) {

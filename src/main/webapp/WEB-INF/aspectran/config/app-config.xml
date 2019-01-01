@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE aspectran PUBLIC "-//ASPECTRAN//DTD Aspectran Configuration 6.0//EN"
+        "http://aspectran.github.io/dtd/aspectran-6.dtd">
+<aspectran>
+
+    <description>
+        Only AOP and special-purpose bean definitions can be used to configure the XML document,
+        and most other settings can be configured using Annotations in Java code.
+    </description>
+
+    <bean id="jspViewDispatcher" class="com.aspectran.web.support.view.JspViewDispatcher">
+        <properties>
+            <item name="prefix" value="/WEB-INF/jsp/"/>
+            <item name="suffix" value=".jsp"/>
+        </properties>
+    </bean>
+
+    <aspect id="transletSettings">
+        <joinpoint target="translet"/>
+        <settings>
+            <setting name="characterEncoding" value="utf-8"/>
+            <setting name="viewDispatcher" value="jspViewDispatcher"/>
+            <setting name="indentString" value="  "/>
+        </settings>
+    </aspect>
+
+</aspectran>
