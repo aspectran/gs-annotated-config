@@ -36,6 +36,7 @@
                     <optimize>true</optimize>
                     <showDeprecation>true</showDeprecation>
                     <showWarnings>true</showWarnings>
+                    <compilerArgument>-Xlint:-options</compilerArgument>
                 </configuration>
             </plugin>
             <plugin>
