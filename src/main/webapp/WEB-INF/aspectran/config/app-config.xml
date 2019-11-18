@@ -16,7 +16,6 @@
     </bean>
 
     <aspect id="transletSettings">
-        <joinpoint target="translet"/>
         <settings>
             <setting name="characterEncoding" value="utf-8"/>
             <setting name="viewDispatcher" value="jspViewDispatcher"/>

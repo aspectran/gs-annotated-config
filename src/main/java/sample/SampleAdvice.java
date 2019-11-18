@@ -8,7 +8,6 @@ import com.aspectran.core.component.bean.annotation.Bean;
 import com.aspectran.core.component.bean.annotation.Before;
 import com.aspectran.core.component.bean.annotation.Component;
 import com.aspectran.core.component.bean.annotation.Joinpoint;
-import com.aspectran.core.context.rule.type.JoinpointTargetType;
 import com.aspectran.core.util.logging.Log;
 import com.aspectran.core.util.logging.LogFactory;
 
@@ -22,7 +21,6 @@ import com.aspectran.core.util.logging.LogFactory;
 @Bean("sampleAdvice")
 @Aspect("sampleAspect")
 @Joinpoint(
-        target = JoinpointTargetType.TRANSLET,
         pointcut = {
             "+: /helloWorld@sampleAction"
         }
