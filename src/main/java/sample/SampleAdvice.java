@@ -8,8 +8,8 @@ import com.aspectran.core.component.bean.annotation.Bean;
 import com.aspectran.core.component.bean.annotation.Before;
 import com.aspectran.core.component.bean.annotation.Component;
 import com.aspectran.core.component.bean.annotation.Joinpoint;
-import com.aspectran.core.util.logging.Log;
-import com.aspectran.core.util.logging.LogFactory;
+import com.aspectran.core.util.logging.Logger;
+import com.aspectran.core.util.logging.LoggerFactory;
 
 /**
  * This Aspect will:
@@ -27,7 +27,7 @@ import com.aspectran.core.util.logging.LogFactory;
 )
 public class SampleAdvice {
 
-    private final Log log = LogFactory.getLog(SampleAdvice.class);
+    private final Logger logger = LoggerFactory.getLogger(SampleAdvice.class);
 
     private final SampleService sampleService;
 
@@ -40,18 +40,18 @@ public class SampleAdvice {
     public String welcome(Translet translet) {
         String msg = sampleService.getWelcomeMessage(translet);
 
-        log.info(msg);
+        logger.info(msg);
 
         return msg;
     }
 
     @After
     public String goodbye(Translet translet) {
-        log.info("activityDataMap " + translet.getActivityDataMap());
+        logger.info("activityDataMap " + translet.getActivityDataMap());
 
         String msg = sampleService.getGoodbyeMessage();
 
-        log.info(msg);
+        logger.info(msg);
 
         return msg;
     }
