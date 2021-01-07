@@ -15,10 +15,10 @@ import com.aspectran.core.util.logging.LoggerFactory;
 import java.util.Map;
 
 @Component
-@Bean("sampleAction")
-public class SampleAction {
+@Bean("sampleActivity")
+public class SampleActivity {
 
-    private static final Logger logger = LoggerFactory.getLogger(SampleAction.class);
+    private static final Logger logger = LoggerFactory.getLogger(SampleActivity.class);
 
     /**
      * http://localhost:8080/helloWorld

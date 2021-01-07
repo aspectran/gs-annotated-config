@@ -22,7 +22,7 @@ import com.aspectran.core.util.logging.LoggerFactory;
 @Aspect("sampleAspect")
 @Joinpoint(
         pointcut = {
-            "+: /helloWorld@sampleAction"
+            "+: /helloWorld@sampleActivity"
         }
 )
 public class SampleAdvice {
