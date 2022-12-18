@@ -11,7 +11,7 @@
         <param-name>aspectran:config</param-name>
         <param-value>
             context: {
-                root: /WEB-INF/aspectran/config/app-context.xml
+                rules: /WEB-INF/aspectran/config/app-context.xml
                 scan: [
                     sample
                 ]
