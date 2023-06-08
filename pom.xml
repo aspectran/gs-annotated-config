@@ -19,7 +19,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.aspectran</groupId>
     <artifactId>gs-annotated-config</artifactId>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
     <version>1.0-SNAPSHOT</version>
     <url>https://github.com/aspectran/gs-annotated-config.git</url>
     <contributors>

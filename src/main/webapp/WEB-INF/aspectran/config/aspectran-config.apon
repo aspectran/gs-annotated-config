@@ -27,9 +27,6 @@ web: {
     uriDecoding: utf-8
     exposals: {
         +: /**
-        -: /assets/**
-        -: /css/**
-        -: /images/**
         -: /favicon.ico
     }
 }
