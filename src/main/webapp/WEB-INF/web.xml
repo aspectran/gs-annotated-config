@@ -9,20 +9,7 @@
     </welcome-file-list>
     <context-param>
         <param-name>aspectran:config</param-name>
-        <param-value>
-            context: {
-                rules: /WEB-INF/aspectran/config/app-context.xml
-                scan: [
-                    sample
-                ]
-                resources: [
-                    /WEB-INF/aspectran/config
-                ]
-            }
-            web: {
-                uriDecoding: utf-8
-            }
-        </param-value>
+        <param-value>file:/WEB-INF/aspectran/config/aspectran-config.apon</param-value>
     </context-param>
     <listener>
         <listener-class>com.aspectran.web.startup.listener.WebServiceListener</listener-class>
