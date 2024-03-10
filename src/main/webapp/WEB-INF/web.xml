@@ -11,12 +11,12 @@
         <param-value>file:/WEB-INF/aspectran/config/aspectran-config.apon</param-value>
     </context-param>
     <listener>
-        <listener-class>com.aspectran.web.startup.listener.WebServiceListener</listener-class>
+        <listener-class>com.aspectran.web.servlet.listener.WebServiceListener</listener-class>
     </listener>
 
     <servlet>
         <servlet-name>web-activity-servlet</servlet-name>
-        <servlet-class>com.aspectran.web.startup.servlet.WebActivityServlet</servlet-class>
+        <servlet-class>com.aspectran.web.servlet.WebActivityServlet</servlet-class>
         <load-on-startup>1</load-on-startup>
     </servlet>
     <servlet-mapping>

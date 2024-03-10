@@ -7,15 +7,14 @@ context: {
     scan: [
         sample
     ]
-    autoReload: {
-        reloadMode: hard
-        scanIntervalSeconds: 5
-        enabled: true
-    }
     profiles: {
         default: [
             dev
         ]
+    }
+    autoReload: {
+        scanIntervalSeconds: 5
+        enabled: false
     }
 }
 scheduler: {
