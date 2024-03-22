@@ -40,15 +40,13 @@
         <plugins>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.12.1</version>
+                <version>3.13.0</version>
                 <configuration>
                     <source>${java.version}</source>
                     <target>${java.version}</target>
-                    <compilerVersion>${java.version}</compilerVersion>
                     <compilerArgs>
                         <arg>-Xlint:-try,-path,-options</arg>
                     </compilerArgs>
-                    <debug>true</debug>
                     <parameters>true</parameters>
                     <showDeprecation>true</showDeprecation>
                     <showWarnings>true</showWarnings>
