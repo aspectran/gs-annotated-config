@@ -18,13 +18,14 @@ package sample;
 import com.aspectran.core.activity.Translet;
 import com.aspectran.core.component.bean.annotation.Bean;
 import com.aspectran.core.component.bean.annotation.Component;
+import com.aspectran.utils.annotation.jsr305.NonNull;
 import jakarta.servlet.http.HttpServletRequest;
 
 @Component
 @Bean("sampleService")
 public class SampleService {
 
-    public String getWelcomeMessage(Translet translet) {
+    public String getWelcomeMessage(@NonNull Translet translet) {
         HttpServletRequest req = translet.getRequestAdaptee();
         String ip = req.getRemoteAddr();
         return "Welcome to Aspectran! (" + ip + ")";

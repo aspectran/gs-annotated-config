@@ -23,6 +23,7 @@ import com.aspectran.core.component.bean.annotation.Bean;
 import com.aspectran.core.component.bean.annotation.Before;
 import com.aspectran.core.component.bean.annotation.Component;
 import com.aspectran.core.component.bean.annotation.Joinpoint;
+import com.aspectran.utils.annotation.jsr305.NonNull;
 import com.aspectran.utils.logging.Logger;
 import com.aspectran.utils.logging.LoggerFactory;
 
@@ -61,7 +62,7 @@ public class SampleAdvice {
     }
 
     @After
-    public String goodbye(Translet translet) {
+    public String goodbye(@NonNull Translet translet) {
         logger.info("activityData " + translet.getActivityData());
 
         String msg = sampleService.getGoodbyeMessage();

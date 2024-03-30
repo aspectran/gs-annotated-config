@@ -24,6 +24,7 @@ import com.aspectran.core.component.bean.annotation.Dispatch;
 import com.aspectran.core.component.bean.annotation.RequestToGet;
 import com.aspectran.core.component.bean.annotation.Transform;
 import com.aspectran.core.context.rule.type.FormatType;
+import com.aspectran.utils.annotation.jsr305.NonNull;
 import com.aspectran.utils.logging.Logger;
 import com.aspectran.utils.logging.LoggerFactory;
 
@@ -77,7 +78,7 @@ public class SampleActivity {
     @RequestToGet("/echoParams")
     @Transform(FormatType.JSON)
     @Action("params")
-    public Map<String, Object> echoParams(Translet translet) {
+    public Map<String, Object> echoParams(@NonNull Translet translet) {
         Map<String, Object> params = translet.getAllParameters();
 
         logger.info("params: " + params);
