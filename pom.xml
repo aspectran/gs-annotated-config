@@ -34,7 +34,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.build.resourceEncoding>UTF-8</project.build.resourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <aspectran.version>8.0.5</aspectran.version>
+        <aspectran.version>8.1.0-SNAPSHOT</aspectran.version>
     </properties>
     <build>
         <plugins>
@@ -72,6 +72,7 @@
                             <goal>copy-dependencies</goal>
                         </goals>
                         <configuration>
+                            <excludeTypes>pom</excludeTypes>
                             <outputDirectory>src/main/webapp/WEB-INF/lib</outputDirectory>
                             <overWriteIfNewer>true</overWriteIfNewer>
                         </configuration>
