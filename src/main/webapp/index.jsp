@@ -12,6 +12,6 @@
         <li><a href="/echo/this-is-a-message">http://localhost:8080/echo/this-is-a-message</a></li>
         <li><a href="http://localhost:8080/echoParams?param1=1&amp;param2=2">http://localhost:8080/echoParams?param1=1&amp;param2=2</a></li>
     </ul>
-    <p><%= com.aspectran.core.util.Aspectran.POWERED_BY_LINK %></p>
+    <p><%= com.aspectran.core.Aspectran.POWERED_BY_LINK %></p>
 </body>
 </html>
